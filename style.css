@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  animation: fadeIn 2s ease-out;
+}
+
+.header-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transform: scale(0);
+  animation: revealSkill 1s forwards;
+}
+
+#react { background-color: #61dafb; }
+#js { background-color: #f0db4f; }
+#html { background-color: #e34f26; }
+#css { background-color: #264de4; }
+#redux { background-color: #764abc; }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes revealSkill {
+  0% { opacity: 0; transform: scale(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #333;
+}
