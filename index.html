@@ -1,43 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahesh Dhungel - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomasz Gajda - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <header class="header">
-    <div class="profile-container">
-      <img src="profile.jpg" alt="Mahesh Dhungel" class="profile-img" loading="lazy">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(0, 0, 0);
+      }
+
+      .left-section {
+        background-color: #f0f0f0;
+        width: 50%;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+      }
+      .left-section h1, .left-section h2, .left-section h3{
+        text-align: center;
+      }
+
+
+      .left-section h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+      }
+
+      .left-section h2 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+      }
+
+      .left-section .links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .left-section .links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.5em;
+      }
+
+      .right-section {
+        background-color: black;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .right-section img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .description{
+        display: flex;
+        flex-direction: column;
+        gap:40px;
+      }
+
+
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-right: 170px;
+    }
+
+    /* Style for each icon inside a box */
+    .icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background-color: #f0f0f0; /* Light background */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Icon color */
+    .icon-box i {
+        font-size: 24px;
+        color: #333; /* Dark color */
+    }
+
+    /* Hover effect */
+    .icon-box:hover {
+        transform: translateY(-5px); /* Slightly lift the icon on hover */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    }
+
+
+ 
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          background-color: rgb(0, 0, 0);
+          background-image: url(../quote.png);
+
+        }
+        .left-section {
+          width: 100%;
+        }
+        .right-section {
+          width: 100%;
+        }
+        .right-section img {
+          height: 300px;
+          width: 300px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: top;
+          position: fixed;
+          top: 10%;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 5px solid rgb(197, 197, 197);
+        }
+        .left-section {
+          clip-path: none;
+          border-radius: 50px 50px 0 0;
+          justify-content: center;
+          
+          position: absolute;
+          min-height: 60%;
+          bottom: 0;
+        }
+        .left-section .description{
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
+        .icon-container{
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 20px;
+        }
+        .something{
+          width: 100%;
+          height: 120px;
+          border: 3px solid rgb(255, 255, 255);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <div class="description">
+          <div class="description-details">
+
+          <h1>Mahesh Dhungel</h1>
+          <h2>Front-end React Developer</h2>
+          </div>
+          <h3 id="myParagraph">
+
+            <i
+              >"The act of coding itself is a source of immense satisfaction."
+            </i>
+          </h3>
+        </div>
+        <div class = "something"></div>
+
+        <div class="icon-container">
+    <!-- GitHub Icon with box and shadow -->
+    <a href="https://github.com/mahesh00009" target="_blank" class="icon-box">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <!-- LinkedIn Icon with box and shadow -->
+    <a href="https://www.linkedin.com/in/mahesh-dhungel-3089a7149/" target="_blank" class="icon-box">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <!-- CodePen Icon with box and shadow -->
+    <a href="https://codepen.io/mahesh0009" target="_blank" class="icon-box">
+        <i class="fab fa-codepen"></i>
+    </a>
+</div>
+      </div>
+      <div class="right-section">
+        <img src="../picture.png" alt="Tomasz Gajda" />
+      </div>
     </div>
-    <div class="header-text">
-      <h1>I'm Mahesh Dhungel</h1>
-      <p>React Web Application Developer</p>
-    </div>
-  </header>
 
-  <section id="skills" class="skills-section">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill" id="react" data-skill="Reacts"></div>
-      <div class="skill" id="js" data-skill="JavaScript"></div>
-      <div class="skill" id="html" data-skill="HTML5"></div>
-      <div class="skill" id="css" data-skill="CSS3"></div>
-      <div class="skill" id="redux" data-skill="Redux"></div>
-      <div class="skill" id="react" data-skill="Reacts"></div>
-      <div class="skill" id="js" data-skill="JavaScript"></div>
-      <div class="skill" id="html" data-skill="HTML5"></div>
-      <div class="skill" id="css" data-skill="CSS3"></div>
-      <div class="skill" id="redux" data-skill="Redux"></div>
-    </div>
-  </section>
+    <script>
+      function removeParagraph() {
+    var paragraph = document.getElementById('myParagraph'); // Assuming you have an ID for the paragraph
+    if (paragraph) {
+        paragraph.style.display = 'none'; // Hides the paragraph
+    }
+}
 
-  <footer>
-    <p>Contact: maheshdhungel@example.com</p>
-  </footer>
+// Function to show the paragraph again
+function showParagraph() {
+    var paragraph = document.getElementById('myParagraph');
+    if (paragraph) {
+        paragraph.style.display = 'block'; // Shows the paragraph
+    }
+}
 
-  <script src="script.js"></script>
-</body>
+// Media query to check for screen size (example for smaller screens like mobile)
+var mediaQuery = window.matchMedia('(max-width: 768px)');
+
+// Event listener to trigger when the screen size changes
+mediaQuery.addEventListener('change', function() {
+    if (mediaQuery.matches) {
+        removeParagraph(); // Remove the paragraph on small screens
+    } else {
+        showParagraph(); // Show the paragraph again on larger screens
+    }
+});
+
+// Initial check
+if (mediaQuery.matches) {
+    removeParagraph();
+} else {
+    showParagraph();
+}
+    </script>
+  </body>
 </html>

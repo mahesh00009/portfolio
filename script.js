@@ -1,24 +1,14 @@
+// Optional: Add interactivity such as hover effects or animations for lazy loading
 document.addEventListener("DOMContentLoaded", function () {
-  const skills = document.querySelectorAll('.skill');
+  const projectCards = document.querySelectorAll('.project-card');
 
-  function revealSkills() {
-    skills.forEach((skill, index) => {
-      setTimeout(() => {
-        skill.style.opacity = 1;
-        skill.style.transform = 'scale(1)';
-      }, index * 200);  // Delayed animation for each skill
+  projectCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transform = 'scale(1.05)';
     });
-  }
 
-  // Trigger skills reveal when section is visible
-  const skillsSection = document.getElementById('skills');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        revealSkills();
-      }
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'scale(1)';
     });
-  }, { threshold: 0.5 });
-
-  observer.observe(skillsSection);
+  });
 });
