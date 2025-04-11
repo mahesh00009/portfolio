@@ -42,6 +42,14 @@ html,body {
   font-size: 1.5em;
   margin-bottom: 30px;
 }
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-left: 120px;
+
+}
 
 .icon-container {
   display: flex;
