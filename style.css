@@ -101,7 +101,6 @@ canvas {
     flex-direction: column-reverse;
     background-color: rgb(0, 0, 0);
     background-image: url("assets/quoteOne.png");
-    background-size: 95% auto;
     object-fit: contain;
     background-position: center 20%;
     background-repeat: no-repeat;
@@ -118,7 +117,7 @@ canvas {
     object-fit: cover;
     object-position: top;
     position: fixed;
-    top: 15%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     border: 5px solid rgb(197, 197, 197);
@@ -148,7 +147,7 @@ canvas {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20px;
+    bottom: 60px;
   }
   .description, .icon-container, #luck-checker{
     z-index: 99;
