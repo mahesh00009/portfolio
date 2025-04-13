@@ -101,6 +101,7 @@ canvas {
     flex-direction: column-reverse;
     background-color: rgb(0, 0, 0);
     background-image: url("assets/quoteOne.png");
+    background-size: 90% auto;
     object-fit: contain;
     background-position: center 20%;
     background-repeat: no-repeat;
@@ -135,15 +136,15 @@ canvas {
     bottom: 0;
   }
   .description-details h1{
-    margin-top: 100px;
-    font-size: 2.2rem;
+    margin-top: 120px;
+    font-size: 2rem;
   }
 
   .icon-container {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 60px;
+    bottom: 20px;
   }
   .description, .icon-container, #luck-checker{
     z-index: 99;
