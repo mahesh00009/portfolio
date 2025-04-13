@@ -20,7 +20,6 @@ mediaQuery.addEventListener('change', () => {
 mediaQuery.matches ? removeParagraph() : showParagraph();
 
 
-// === Luck Checker Canvas Bar ===
 const today = new Date().toLocaleDateString();
 let storedDate = localStorage.getItem('luckDate');
 let luck = localStorage.getItem('dailyLuck');
@@ -43,6 +42,7 @@ let currentWidth = 0;
 const maxWidth = luckCanvas.width;
 const barHeight = 30;
 const targetWidth = (luck / 100) * maxWidth;
+let currentLuckText = 0; // For animating the luck percentage text
 
 function drawBackgroundBar() {
   luckCtx.fillStyle = '#eee';
@@ -58,7 +58,7 @@ function drawText() {
   luckCtx.font = '16px Arial';
   luckCtx.fillStyle = '#000';
   luckCtx.textAlign = 'center';
-  luckCtx.fillText(`You are ${luck}% Lucky`, luckCanvas.width / 2, 32);
+  luckCtx.fillText(`You have ${Math.round(currentLuckText)}% Luck Today`, luckCanvas.width / 2, 32); // Use animated text
 }
 
 function animateBar() {
@@ -69,6 +69,10 @@ function animateBar() {
 
   if (currentWidth < targetWidth) {
     currentWidth += 2;
+    currentLuckText = (currentWidth / maxWidth) * 100; // Update the text value
+    requestAnimationFrame(animateBar);
+  } else if (currentLuckText < luck) { // Animate the final text value
+    currentLuckText += 1; // Adjust the animation speed as needed
     requestAnimationFrame(animateBar);
   }
 }
